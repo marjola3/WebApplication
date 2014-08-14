@@ -6,8 +6,8 @@ import javax.persistence.*;
  * Author: Mariola
  */
 @Entity
-@Table(name = "user")
-public class User {
+@Table(name = "web_user")
+public class UserEntity {
 
     @Id
     @Column(name = "user_id")

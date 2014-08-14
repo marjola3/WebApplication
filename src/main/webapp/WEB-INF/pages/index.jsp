@@ -3,7 +3,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="/resources/css/style.css"/>
     <title>WebApp</title>
 </head>
 
