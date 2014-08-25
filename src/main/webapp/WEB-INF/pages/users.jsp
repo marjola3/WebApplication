@@ -1,5 +1,6 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page pageEncoding="utf-8" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -36,6 +37,28 @@
             </tr>
         </table>
     </form:form>
+
+    <c:if test="${!empty usersList}">
+        <table>
+            <tr>
+                <td><spring:message code="users.table.firstName"/></td>
+                <td><spring:message code="users.table.lastName"/></td>
+                <td><spring:message code="users.table.login"/></td>
+                <td><spring:message code="users.table.password"/></td>
+                <td></td>
+            </tr>
+            <c:forEach items="${usersList}" var="user">
+               <tr>
+                 <td>${user.firstName}</td>
+                 <td>${user.lastName}</td>
+                 <td>${user.login}</td>
+                 <td>${user.password}</td>
+                 <td><a href="delete/${user.id}"><spring:message code="users.table.delete"/></a></td>
+               </tr>
+            </c:forEach>
+        </table>
+    </c:if>
+
 </div>
 </body>
 </html>

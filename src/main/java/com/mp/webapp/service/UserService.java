@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 /**
  * Author: Mariola
  */
@@ -37,5 +39,16 @@ public class UserService implements IUserService {
     @Transactional
     public void delete(Iterable<UserEntity> users) {
         userRepository.delete(users);
+    }
+
+    @Override
+    @Transactional
+    public void delete(Long id) {
+        userRepository.delete(id);
+    }
+
+    @Override
+    public List<UserEntity> findAll() {
+        return userRepository.findAll();
     }
 }
