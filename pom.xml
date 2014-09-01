@@ -8,11 +8,12 @@
     <name>WebApplication</name>
 
     <properties>
-        <spring.version>3.2.0.RELEASE</spring.version>
-        <junit.version>4.8.2</junit.version>
-        <postgresql.version>9.1-901.jdbc4</postgresql.version>
-        <hibernate.version>4.2.2.Final</hibernate.version>
-        <slf4j.version>1.7.5</slf4j.version>
+        <spring.version>4.0.5.RELEASE</spring.version>
+        <hibernate.version>4.3.6.Final</hibernate.version>
+        <hibernate-jpa.version>1.0.0.Final</hibernate-jpa.version>
+        <junit.version>4.11</junit.version>
+        <slf4j.version>1.7.7</slf4j.version>
+        <postgresql.version>9.3-1102-jdbc41</postgresql.version>
     </properties>
 
     <dependencies>
@@ -28,19 +29,6 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
             <version>${spring.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
-            <version>2.5</version>
-        </dependency>
-
-        <dependency>
-            <groupId>javax.servlet.jsp</groupId>
-            <artifactId>jsp-api</artifactId>
-            <version>2.1</version>
-            <scope>provided</scope>
         </dependency>
 
         <dependency>
@@ -62,6 +50,25 @@
             <version>${spring.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>jsp-api</artifactId>
+            <version>2.1</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+            <version>1.2.0.RELEASE</version>
+        </dependency>
+
         <!-- JUnit -->
         <dependency>
             <groupId>junit</groupId>
@@ -72,7 +79,7 @@
 
         <!-- Postgres -->
         <dependency>
-            <groupId>postgresql</groupId>
+            <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>${postgresql.version}</version>
         </dependency>
@@ -80,8 +87,8 @@
         <!-- JPA -->
         <dependency>
             <groupId>org.hibernate.javax.persistence</groupId>
-            <artifactId>hibernate-jpa-2.0-api</artifactId>
-            <version>1.0.1.Final</version>
+            <artifactId>hibernate-jpa-2.1-api</artifactId>
+            <version>${hibernate-jpa.version}</version>
         </dependency>
 
         <!-- Hibernate -->
@@ -95,12 +102,6 @@
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
             <version>${hibernate.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-jpa</artifactId>
-            <version>1.2.0.RELEASE</version>
         </dependency>
 
         <dependency>
@@ -119,21 +120,21 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>jcl-over-slf4j</artifactId>
-            <version>1.7.0</version>
+            <version>${slf4j.version}</version>
             <scope>runtime</scope>
         </dependency>
 
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.7.0</version>
+            <version>${slf4j.version}</version>
             <scope>runtime</scope>
         </dependency>
 
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
-            <version>1.7.0</version>
+            <version>${slf4j.version}</version>
             <scope>runtime</scope>
         </dependency>
 
@@ -151,8 +152,8 @@
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
+                    <source>1.7</source>
+                    <target>1.7</target>
                 </configuration>
             </plugin>
             <plugin>
